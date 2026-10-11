@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowup Beauty - Katalog Produk Make Up</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Menggunakan clamp() untuk tipografi responsif dinamis */
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 4rem);
+        }
+        .section-title {
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        }
+        .product-title {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+    </style>
+</head>
+<body class="bg-rose-50/50 text-gray-800 antialiased">
+
+    <!-- ========================================== -->
+    <!-- 1. COVER / HERO SECTION (Awal Buka Website) -->
+    <!-- ========================================== -->
+    <section class="relative min-h-screen flex items-center justify-center bg-cover bg-center px-4" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(244, 63, 94, 0.3)), url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1600&auto=format&fit=crop&q=80');">
+        <div class="text-center text-white max-w-3xl space-y-6 animate-fade-in">
+            <span class="inline-block uppercase tracking-widest text-xs md:text-sm font-semibold bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/30">
+                Exclusive Beauty Collection
+            </span>
+            <h1 class="hero-title font-serif-title font-bold leading-tight drop-shadow-md">
+                Pancarkan Pesona Cantik Alami Setiap Hari
+            </h1>
+            <p class="text-sm md:text-lg text-rose-100 max-w-xl mx-auto font-light leading-relaxed">
+                Temukan ragam koleksi make up premium untuk menyempurnakan setiap momen berhargamu. Quality formulas for your radiant skin.
+            </p>
+            
+            <!-- Tombol Click Masuk ke Produk -->
+            <div class="pt-4">
+                <a href="#katalog" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg hover:shadow-rose-500/30 transition-all duration-300 transform hover:-translate-y-1">
+                    <span>Lihat Produk</span>
+                    <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. NAVBAR RESPONSIF -->
+    <!-- ========================================== -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-rose-100 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3.5 flex justify-between items-center">
+            <a href="#" class="font-serif-title text-2xl font-bold text-rose-600 tracking-wide">
+                Glowup Beauty
+            </a>
+            
+            <!-- Hamburger Button (Mobile Breakpoint) -->
+            <button id="menu-btn" aria-label="Toggle menu" class="md:hidden text-gray-700 p-2 rounded-lg hover:bg-rose-50 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Nav Links (Desktop & Toggleable in Mobile) -->
+            <div id="menu" class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                <a href="#" class="hover:text-rose-600 transition">Beranda</a>
+                <a href="#katalog" class="hover:text-rose-600 transition">Katalog Produk</a>
+                <a href="#tentang" class="hover:text-rose-600 transition">Tentang Kami</a>
+                <a href="#kontak" class="bg-rose-500 text-white px-5 py-2 rounded-full hover:bg-rose-600 transition shadow-sm">Hubungi Kami</a>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu untuk Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-rose-100 bg-white px-4 py-3 space-y-2">
+            <a href="#" class="block py-2 text-gray-600 hover:text-rose-600 font-medium">Beranda</a>
+            <a href="#katalog" class="block py-2 text-gray-600 hover:text-rose-600 font-medium">Katalog Produk</a>
+            <a href="#tentang" class="block py-2 text-gray-600 hover:text-rose-600 font-medium">Tentang Kami</a>
+            <a href="#kontak" class="block py-2 text-rose-600 font-semibold">Hubungi Kami</a>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- 3. KATALOG PRODUK RESPONSIF -->
+    <!-- ========================================== -->
+    <main id="katalog" class="container mx-auto px-4 py-16 scroll-mt-20">
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+            <span class="text-rose-500 font-semibold text-xs tracking-wider uppercase">Pilihan Terbaik</span>
+            <h2 class="section-title font-serif-title font-bold text-gray-900">Katalog Make Up Terbaik</h2>
+            <p class="text-gray-600 text-sm md:text-base">Pilih produk favoritmu dan dapatkan tampilan cantik merona alami.</p>
+        </div>
+
+        <!-- Grid Responsif (1 Kolom Mobile, 2 Kolom Tablet, 4 Kolom Desktop) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            
+            <!-- CARD PRODUK 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://guardianindonesia.co.id/media/catalog/product/53/3127352~1_20251124172838_8313.png?auto=webp&format=png&width=640&height=800&fit=cover" alt="Lipstick Matte" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Bibir</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Glossy Tint</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Formula ringan tahan hingga 12 jam dengan hasil akhir yang glossy.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 55.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.soco.id/a087ae58-b05b-481d-b8b7-4d3081dff20b-.jpg" alt="Liquid Foundation" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Liquid Foundation</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Menutup noda sempurna dengan efek glowing natural sepanjang hari.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 88.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://images.ctfassets.net/wlke2cbybljx/AsVqDlt8VJEgNYQgGKFcx/2d9d309ef480f681b94889d760c87686/luxury-palette-pillow-talk-packshot.png?bg=rgb%3Affffff&fm=png" alt="Eyeshadow Palette" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Mata</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Eyeshadow Palette</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Kombinasi warna matte dan shimmer yang highly pigmented.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 150.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 4 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrnntJ8GcstSlRRRWH9mHI2yMs4IfuN6hHV6zxHzn-Gg&s=10" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Glow Fix Setting Spray</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Kunci riasan wajah agar tidak mudah luntur hingga 16 jam.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 65.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+             <!-- CARD PRODUK 5 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5EBxWNEDoyYHIfhKYbmQklC-gVDTLX8eKXiQYjRpxOqTbGw1htWaFlpUE&s=10" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Liquid Blush</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Pipi merona sepanjang hari.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 36.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+             <!-- CARD PRODUK 6 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://www.revlon.co.uk/cdn/shop/files/309974784146_1_74e7f43e-eb43-4139-bcf7-008dee4238b3.jpg?v=1750293435&width=1080" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Powder Blush</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Pipi merona tahan lama.</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 45.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 7 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://down-id.img.susercontent.com/file/33e708c597aa7f60a6291d36e0560eff" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Mata</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Eyebrow Pencil</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Alis tegas dan sempurna</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 5.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- CARD PRODUK 8 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU8-9E5vU-kml5eeM_CKKKaOhOLXpqHSYWnXsNpsCZ7g&s" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Loose Powder</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Untuk kulit wajah yg matte seharian</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 110.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 9 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_W9z4HOdJ8THJXPLzqaXKkgVXzetB-BjOm0A1jJI3nA&s=10" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Wajah</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Cushion</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Menutup noda dengan sempurna dan memberikan coverage yang sempurna</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 96.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARD PRODUK 10 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-rose-100/60 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between">
+                <div>
+                    <div class="relative overflow-hidden group">
+                        <img src="https://www.maybelline.co.id/-/media/project/loreal/brand-sites/mny/apac/id/products/eye-makeup/mascara/hypercurl-mascara/hypercurl-mascara-5.webp" class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-rose-600 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm">Mata</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="product-title font-bold text-gray-800">Maskara</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Bulumata badai dan tahan seharian</p>
+                        <p class="text-lg font-bold text-rose-600 mt-3">Rp 100.000</p>
+                    </div>
+                </div>
+                <div class="p-5 pt-0">
+                    <button class="w-full bg-rose-500 hover:bg-rose-600 text-white font-medium py-2.5 rounded-xl transition text-sm flex items-center justify-center gap-2">
+                        <span>Beli Sekarang</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- 4. FOOTER -->
+    <!-- ========================================== -->
+    <footer class="bg-white border-t border-rose-100 py-8 text-center text-sm text-gray-500">
+        <div class="container mx-auto px-4 space-y-3">
+            <p class="font-serif-title text-lg font-bold text-rose-600">Glowup Beauty</p>
+            <p class="text-xs text-gray-400">&copy; 2026 Glowup Beauty Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript untuk Hamburger Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
